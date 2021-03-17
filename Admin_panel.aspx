@@ -201,11 +201,24 @@
                 <div class="card-tools">
                   <button type="button" class="btn btn-tool" data-card-widget="collapse"><i class="fas fa-minus"></i>
                   </button>
-                  <button type="button" class="btn btn-tool" data-card-widget="remove"><i class="fas fa-times"></i></button>
+                  
                 </div>
               </div>
               <div class="card-body">
-
+                  <asp:Chart ID="Chart1" runat="server" DataSourceID="SqlDataSource1" Width="500px" >
+                      <Series>
+                          <asp:Series Name="Series1" ChartType="Pie" Legend="Legend1" XValueMember="City" YValueMembers="NoOfSociety" IsValueShownAsLabel="True"></asp:Series>
+                      </Series>
+                      <ChartAreas>
+                          <asp:ChartArea Name="ChartArea1"></asp:ChartArea>
+                      </ChartAreas>
+                      <Legends>
+                          <asp:Legend Name="Legend1" Title="Cities">
+                          </asp:Legend>
+                      </Legends>
+                  </asp:Chart>
+                 
+                  <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" ProviderName="<%$ ConnectionStrings:ConnectionString.ProviderName %>" SelectCommand="SELECT [NoOfSociety], [City] FROM [CityWiseSociety]"></asp:SqlDataSource>
                  
               </div>
               <!-- /.card-body -->

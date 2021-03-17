@@ -30,21 +30,7 @@ namespace SocietyManagment
       dlAASState.Items.Insert(0, "Select State");
       con.Close();
     }
-      if (IsPostBack)
-      {
-        con.Open();
-        String sc = "select City from CityState where State=@p1";
-        SqlCommand cmdc = new SqlCommand(sc, con);
-        cmdc.Parameters.AddWithValue("@p1",dlAASState.SelectedValue);
-        SqlDataReader drc = cmdc.ExecuteReader();
-        dlAASCity.DataSource = drc;
-        dlAASCity.DataTextField = "City";
-        dlAASCity.DataValueField = "City";
-        dlAASCity.DataBind();
-        dlAASCity.Items.Insert(0, "Select City");
-        con.Close();
-        
-      }
+      
       
     }
     protected void ALogout_Click(Object sender, EventArgs e)
@@ -87,6 +73,7 @@ namespace SocietyManagment
           cmd1.Parameters.AddWithValue("@p7", dlAASState.SelectedValue.ToString());
           cmd1.ExecuteNonQuery();
           con.Close();
+          updateCityWiseSociety(dlAASCity.SelectedValue.ToString());
           txtASCode.Text = "";
           txtASName.Text = "";
           txtASBlock.Text = "";
@@ -105,6 +92,67 @@ namespace SocietyManagment
 
       }
     }
-    
+    protected void updateCityWiseSociety(String c)
+    {
+      con.Open();
+      string cq = "select * from CityWiseSociety where City=@p1";
+      SqlCommand cmdcq = new SqlCommand(cq, con);
+      cmdcq.Parameters.AddWithValue("@p1", c);
+      cmdcq.ExecuteNonQuery();
+      SqlDataReader drc = cmdcq.ExecuteReader();
+      if (drc.Read())
+      {
+        int n = (int)drc["NoOfSociety"];
+        n = n + 1;
+        drc.Close();
+        updatenoofsociety(c, n);
+      }
+      
+      else
+      {
+        con.Close();
+        con.Open();
+        string cqa = "insert into CityWiseSociety (City,NoOfSociety) values(@pc,@pn)";
+        SqlCommand cmdcqa = new SqlCommand(cqa, con);
+        cmdcqa.Parameters.AddWithValue("@pc", c);
+        cmdcqa.Parameters.AddWithValue("@pn",1);
+        cmdcqa.ExecuteNonQuery();
+        con.Close();
+      }
+    }
+    protected void updatenoofsociety(string c,int n)
+    {
+      con.Close();
+      con.Open();
+      string cqu = "update CityWiseSociety set NoOfSociety=@pun where City=@puc";
+      SqlCommand cmdcqu = new SqlCommand(cqu, con);
+      cmdcqu.Parameters.AddWithValue("@puc", c);
+      cmdcqu.Parameters.AddWithValue("@pun", n);
+      cmdcqu.ExecuteNonQuery();
+      con.Close();
+    }
+
+
+    protected void dlAASState_SelectedIndexChanged(object sender, EventArgs e)
+    {
+      if (dlAASState.SelectedIndex != 0)
+      {
+        if (IsPostBack)
+        {
+          con.Open();
+          String sc = "select City from CityState where State=@p1";
+          SqlCommand cmdc = new SqlCommand(sc, con);
+          cmdc.Parameters.AddWithValue("@p1", dlAASState.SelectedValue);
+          SqlDataReader drc = cmdc.ExecuteReader();
+          dlAASCity.DataSource = drc;
+          dlAASCity.DataTextField = "City";
+          dlAASCity.DataValueField = "City";
+          dlAASCity.DataBind();
+          dlAASCity.Items.Insert(0, "Select City");
+          con.Close();
+
+        }
+      }
+    }
   }
 }

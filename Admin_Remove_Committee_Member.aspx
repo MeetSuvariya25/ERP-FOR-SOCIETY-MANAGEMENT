@@ -162,7 +162,7 @@
                               </div>
                               <!-- /.card-header -->
                               <!-- form start -->
-                              </div>
+                             <form role="form">
                                 <div class="card-body">
                                   <div class="form-group">
                                     <div class="row">
@@ -235,7 +235,7 @@
                                    <asp:Label ID="lblARCflag" runat="server" ForeColor="Red"></asp:Label>
                                 </div>
                               </form>
-                            </div>
+                             </div>
                             <!-- /.card -->
                             </div>
                           </div>

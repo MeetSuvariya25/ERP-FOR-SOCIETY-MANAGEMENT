@@ -206,12 +206,12 @@
                                        <div class="col-md-6">
                                         <label>City</label>
                                        
-                                        <asp:DropDownList ID="dlAASCity" runat="server" class="form-control" required></asp:DropDownList>
+                                        <asp:DropDownList ID="dlAASCity" runat="server" class="form-control" required ></asp:DropDownList>
                                        </div>
                                        <div class="col-md-6">
                                           <label>State</label>
                                          
-                                          <asp:DropDownList ID="dlAASState" runat="server" AutoPostBack="True" class="form-control" required></asp:DropDownList>
+                                          <asp:DropDownList ID="dlAASState" runat="server" AutoPostBack="true" class="form-control" required OnSelectedIndexChanged="dlAASState_SelectedIndexChanged" ></asp:DropDownList>
                                        </div>
                                      </div>
                                     </div>
