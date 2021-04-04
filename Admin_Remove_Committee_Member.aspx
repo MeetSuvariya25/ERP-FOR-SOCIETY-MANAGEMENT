@@ -180,14 +180,14 @@
                                     <div class="row">
                                       <div class="col-md-6">
                                           <label>Committee Member code</label>
-                                          <asp:DropDownList ID="dlARCMCode" runat="server" class="form-control" AutoPostBack="True" DataSourceID="SqlDataSource1" DataTextField="CoCode" DataValueField="CoCode" OnSelectedIndexChanged="dlARCMCode_SelectedIndexChanged" >
+                                          <asp:DropDownList ID="dlARCMCode" runat="server" class="form-control" AutoPostBack="True"  DataTextField="CoCode" DataValueField="CoCode" OnSelectedIndexChanged="dlARCMCode_SelectedIndexChanged" >
                                             
                                           </asp:DropDownList>
-                                          <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" ProviderName="<%$ ConnectionStrings:ConnectionString.ProviderName %>" SelectCommand="SELECT [CoCode] FROM [CommitteeInfo] WHERE ([SocietyCode] = @SocietyCode)">
+                                          <!--<asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" ProviderName="<%$ ConnectionStrings:ConnectionString.ProviderName %>" SelectCommand="SELECT [CoCode] FROM [CommitteeInfo] WHERE ([SocietyCode] = @SocietyCode)">
                                               <SelectParameters>
                                                   <asp:ControlParameter ControlID="dlASCode" Name="SocietyCode" PropertyName="SelectedValue" Type="String" />
                                               </SelectParameters>
-                                          </asp:SqlDataSource>
+                                          </asp:SqlDataSource>-->
                                        </div>
                                        <div class="col-md-6">
                                         <label> Committee Member Name</label>

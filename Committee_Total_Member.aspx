@@ -43,7 +43,7 @@
                   <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
                 </li>
                 <li class="nav-item d-none d-sm-inline-block">
-                  <a href="#" class="nav-link">Home</a>
+                  <a href="Committee_Panel.aspx" class="nav-link">Home</a>
                 </li>
                 <li class="nav-item d-none d-sm-inline-block">
                   <a href="#" class="nav-link">Contact</a>
@@ -79,7 +79,7 @@
                     <!-- Add icons to the links using the .nav-icon class
                          with font-awesome or any other icon font library -->
                     <li class="nav-item">
-                      <a href="#" class="nav-link active">
+                      <a href="Committee_Panel.aspx" class="nav-link active">
                         <i class="nav-icon fas fa-tachometer-alt"></i>
                         <p>
                           Dashboard
@@ -120,6 +120,46 @@
                         <i class="nav-icon fas fa-user-minus"></i>
                         <p>Remove Member</p>
                       </a>
+                    </li>
+                    <li class="nav-item has-treeview">
+                      <a href="#" class="nav-link">
+                        <i class="nav-icon fas fa-university"></i>
+                          <p>Account
+                          <i class="fas fa-angle-left right"></i>
+                        </p>
+                      </a>
+                         <ul class="nav nav-treeview">
+                        <li class="nav-item">
+                         <a href="Committee_Account_Amount.aspx" class="nav-link">
+                            <i class="far fa-circle nav-icon"></i>
+                            <p>Account Info</p>
+                          </a>
+                        </li>
+                      </ul>
+                      <ul class="nav nav-treeview">
+                        <li class="nav-item">
+                          <a href="Committee_Account_Income.aspx" class="nav-link">
+                            <i class="far fa-circle nav-icon"></i>
+                            <p>Income</p>
+                          </a>
+                        </li>
+                      </ul>
+                        <ul class="nav nav-treeview">
+                        <li class="nav-item">
+                          <a href="Committee_Account_Expenses.aspx" class="nav-link">
+                            <i class="far fa-circle nav-icon"></i>
+                            <p>Expenses</p>
+                          </a>
+                        </li>
+                      </ul>
+                       <ul class="nav nav-treeview">
+                        <li class="nav-item">
+                          <a href="Committee_Account_Maintenance.aspx" class="nav-link">
+                            <i class="far fa-circle nav-icon"></i>
+                            <p>Maintenance</p>
+                          </a>
+                        </li>
+                      </ul>
                     </li>
                     <li class="nav-item has-treeview">
                       <a href="Committee_Society_Parking_Info.aspx" class="nav-link">
@@ -203,7 +243,7 @@
                    <SortedDescendingCellStyle BackColor="#E9EBEF" />
                    <SortedDescendingHeaderStyle BackColor="#4870BE" />
                    </asp:GridView>
-                   <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" ProviderName="<%$ ConnectionStrings:ConnectionString.ProviderName %>" SelectCommand="SELECT [MBlock], [MName], [MBDate], [MTotalmember], [HouseType], [MPhone], [MEmail] FROM [MemberInfo] WHERE ([SocietyCode] = @SocietyCode)">
+                   <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" ProviderName="<%$ ConnectionStrings:ConnectionString.ProviderName %>" SelectCommand="SELECT [MBlock], [MName], [MBDate], [MTotalmember], [HouseType], [MPhone], [MEmail] FROM [MemberInfo] WHERE ([SocietyCode] = @SocietyCode) ORDER BY [MBlock]">
                        <SelectParameters>
                            <asp:SessionParameter Name="SocietyCode" SessionField="CSCode" Type="String" />
                        </SelectParameters>

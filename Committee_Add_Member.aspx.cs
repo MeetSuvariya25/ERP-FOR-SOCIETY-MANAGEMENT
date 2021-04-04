@@ -27,9 +27,10 @@ namespace SocietyManagment
     bool checkAvaibility()
     {
       
-      SqlCommand cmd = new SqlCommand("select * from MemberInfo where MUsername=@p1 or MBlock=@p2",con);
+      SqlCommand cmd = new SqlCommand("select * from MemberInfo where (MUsername=@p1 or MBlock=@p2) and SocietyCode=@pc",con);
       cmd.Parameters.AddWithValue("@p1", txtCAMUsername.Text);
       cmd.Parameters.AddWithValue("@p2", txtCAMBloackNo.Text);
+      cmd.Parameters.AddWithValue("@pc",Session["CSCode"].ToString());
       SqlDataAdapter da = new SqlDataAdapter(cmd);
       DataTable dt = new DataTable();
       da.Fill(dt);

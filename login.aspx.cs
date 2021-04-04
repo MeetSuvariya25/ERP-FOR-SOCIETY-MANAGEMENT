@@ -66,6 +66,7 @@ namespace SocietyManagment
         {
           txtLUsername.Text = "";
           Session["MName"] = dt.Rows[0]["MName"].ToString();
+          Session["MBlock"] = dt.Rows[0]["MBlock"].ToString();
           Session["MSCode"] = dt.Rows[0]["SocietyCode"].ToString();
           Session["MSName"] = dt.Rows[0]["SocietyName"].ToString();
           Session["MUsername"] = dt.Rows[0]["MUsername"].ToString();

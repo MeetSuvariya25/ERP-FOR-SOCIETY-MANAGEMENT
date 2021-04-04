@@ -77,10 +77,17 @@ namespace SocietyManagment
            SqlCommand cmd3 = new SqlCommand(s2, con);
            cmd3.Parameters.AddWithValue("@p4", dlRScode.SelectedItem.Value.ToString());
            cmd3.ExecuteNonQuery();
-          lblRSflag.Text = "Deleted".ToString();
-
           
+          //delete vehicle Deatils
+          string sv = "delete from VehicleDetails where SocietyCode=@pcv";
+          SqlCommand rvcmd = new SqlCommand(sv, con);
+          rvcmd.Parameters.AddWithValue("@pcv", dlRScode.SelectedItem.Value.ToString());
+          rvcmd.ExecuteNonQuery();
 
+
+          //delete society Account info
+          updateSocietyAccount(dlRScode.SelectedItem.Value.ToString());
+          lblRSflag.Text = "Deleted".ToString();
           dlRScode.SelectedIndex = 0;
           txtRSAdminPass.Text = "";
           txtRSName.Text = "";
@@ -180,68 +187,23 @@ namespace SocietyManagment
         Clear();
       }
     }
+    protected void updateSocietyAccount(string sc)
+    {
+      
+      string dsa = "delete from SocietyAccount where SocietyCode=@psc";
+      SqlCommand dsacmd = new SqlCommand(dsa, con);
+      dsacmd.Parameters.AddWithValue("@psc", sc);
+      dsacmd.ExecuteNonQuery();
+      string dsi = "delete from SocietyIncome where SocietyCode=@psc1";
+      SqlCommand dsicmd = new SqlCommand(dsi, con);
+      dsicmd.Parameters.AddWithValue("@psc1", sc);
+      dsicmd.ExecuteNonQuery();
+      string dso = "delete from SocietyExpenses where SocietyCode=@psc2";
+      SqlCommand dsocmd = new SqlCommand(dso, con);
+      dsocmd.Parameters.AddWithValue("@psc2", sc);
+      dsocmd.ExecuteNonQuery();
+    }
   }
 }
 
 
-
-/*
-  protected void findcity( string scode)
-    {
-      con.Close();
-      con.Open();
-      string fc = "select * from SocietyInfo where SocietyCode=@psfc";
-      SqlCommand cmdfc = new SqlCommand(fc, con);
-      cmdfc.Parameters.AddWithValue("@psfc",scode);
-      cmdfc.ExecuteNonQuery();
-      SqlDataReader drfc = cmdfc.ExecuteReader();
-      updateCityWiseSociety(drfc["City"].ToString());
-      
-    }
-    protected void updateCityWiseSociety(string c)
-    {
-      con.Close();
-      con.Open();
-      string sr = "select * from CityWiseSociety where City=@pcws";
-      SqlCommand cmds = new SqlCommand(sr, con);
-      cmds.Parameters.AddWithValue("@pcws", c);
-      cmds.ExecuteNonQuery();
-      SqlDataReader drs = cmds.ExecuteReader();
-      if (drs.Read())
-      {
-        int n = (int)drs["NoOfSociety"];
-        if (n == 1)
-        {
-          removenoofsociety(c);
-        }
-        else
-        {
-          n = n - 1;
-          updatenoofsociety(c, n);
-        }
-      }
-      
-    }
-    protected void removenoofsociety(string c)
-    {
-      con.Close();
-      con.Open();
-      string cqr = " delete from CityWiseSociety where City=@prc";
-      SqlCommand cmdcqr = new SqlCommand(cqr, con);
-      cmdcqr.Parameters.AddWithValue("@prc", c);
-      cmdcqr.ExecuteNonQuery();
-      con.Close();
-    }
-    protected void updatenoofsociety(string c, int n)
-    {
-      con.Close();
-      con.Open();
-      string cqu = "update CityWiseSociety set NoOfSociety=@pun where City=@puc";
-      SqlCommand cmdcqu = new SqlCommand(cqu, con);
-      cmdcqu.Parameters.AddWithValue("@puc", c);
-      cmdcqu.Parameters.AddWithValue("@pun", n);
-      cmdcqu.ExecuteNonQuery();
-      con.Close();
-    }
- 
- */

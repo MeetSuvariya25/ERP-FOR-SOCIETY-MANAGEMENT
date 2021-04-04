@@ -52,7 +52,7 @@ namespace SocietyManagment
     {
       lblCommitteeMName.Text = Session["CName"].ToString();
       con.Open();
-      
+
       lblRBlock.Text = RemainingBlock().ToString();
       lblTmember.Text = countofQuery("select * from MemberInfo where SocietyCode='"+Session["CSCode"]+"'").ToString();
       lblNoOfVehicles.Text = countofQuery("select * from VehicleDetails Where SocietyCode='" + Session["CSCode"] + "'").ToString();

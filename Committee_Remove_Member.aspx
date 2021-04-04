@@ -122,6 +122,46 @@
                       </a>
                     </li>
                     <li class="nav-item has-treeview">
+                      <a href="#" class="nav-link">
+                        <i class="nav-icon fas fa-university"></i>
+                          <p>Account
+                          <i class="fas fa-angle-left right"></i>
+                        </p>
+                      </a>
+                         <ul class="nav nav-treeview">
+                        <li class="nav-item">
+                          <a href="Committee_Account_Amount.aspx" class="nav-link">
+                            <i class="far fa-circle nav-icon"></i>
+                            <p>Account Info</p>
+                          </a>
+                        </li>
+                      </ul>
+                      <ul class="nav nav-treeview">
+                        <li class="nav-item">
+                          <a href="Committee_Account_Income.aspx" class="nav-link">
+                            <i class="far fa-circle nav-icon"></i>
+                            <p>Income</p>
+                          </a>
+                        </li>
+                      </ul>
+                        <ul class="nav nav-treeview">
+                        <li class="nav-item">
+                          <a href="Committee_Account_Expenses.aspx" class="nav-link">
+                            <i class="far fa-circle nav-icon"></i>
+                            <p>Expenses</p>
+                          </a>
+                        </li>
+                      </ul>
+                       <ul class="nav nav-treeview">
+                        <li class="nav-item">
+                          <a href="Committee_Account_Maintenance.aspx" class="nav-link">
+                            <i class="far fa-circle nav-icon"></i>
+                            <p>Maintenance</p>
+                          </a>
+                        </li>
+                      </ul>
+                    </li>
+                    <li class="nav-item has-treeview">
                       <a href="Committee_Society_Parking_Info.aspx" class="nav-link">
                         <i class="nav-icon fas fa-car"></i>
                           <p>Parking

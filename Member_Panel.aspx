@@ -49,8 +49,6 @@
                   <a href="#" class="nav-link">Contact</a>
                 </li>
               </ul>
-
-        
             </nav>
             <!-- /.navbar -->  
 
@@ -117,6 +115,31 @@
                           Society Member List
                         </p>
                       </a>
+                    </li>
+                    <li class="nav-item has-treeview">
+                      <a href="#" class="nav-link">
+                        <i class="nav-icon fas fa-university"></i>
+                          <p>Society Account
+                          <i class="fas fa-angle-left right"></i>
+                        </p>
+                      </a>
+                       <ul class="nav nav-treeview">
+                        <li class="nav-item">
+                          <a href="Member_SAccount_Info.aspx" class="nav-link">
+                            <i class="far fa-circle nav-icon"></i>
+                            <p>Society Account</p>
+                          </a>
+                        </li>
+                      </ul>
+                      <ul class="nav nav-treeview">
+                        <li class="nav-item">
+                          <a href="Member_SAccount_Maintenance.aspx" class="nav-link">
+                            <i class="far fa-circle nav-icon"></i>
+                            <p>Maintenance</p>
+                          </a>
+                        </li>
+                      </ul>
+                      
                     </li>
                       <li class="nav-item has-treeview">
                       <a href="#" class="nav-link">
@@ -188,7 +211,50 @@
             </section> 
                <section class="content">
                <div class="container-fluid">
-        <!-- Small boxes (Stat box) -->
+                  <div class="row">
+          <div class="col-lg-4 col-6">
+            <!-- small box -->
+            <div class="small-box bg-info">
+              <div class="inner">
+                <h3><asp:Label ID="lblMVehicle" runat="server" Text="X"></asp:Label></h3>
+                <p>My Vehicles</p>
+              </div>
+              <div class="icon">
+                <i class="ion ion-android-car "></i>
+              </div>
+              <asp:HyperLink class="small-box-footer" runat="server" NavigateUrl="~/Member_Vehicle_Info.aspx">More info<i class="fas fa-arrow-circle-right"></i></asp:HyperLink>
+            </div>
+          </div>
+          <!-- ./col -->
+          <div class="col-lg-4 col-6">
+            <!-- small box -->
+            <div class="small-box bg-success">
+              <div class="inner">
+                <h3><asp:Label ID="lblCList" runat="server" Text="X"></asp:Label></h3>
+                <p>Committee Members</p>
+              </div>
+              <div class="icon">
+                <i class="ion ion-android-people"></i>
+              </div>
+              <asp:HyperLink class="small-box-footer" runat="server" NavigateUrl="~/Member_CommitteeList.aspx">More info<i class="fas fa-arrow-circle-right"></i></asp:HyperLink>
+            </div>
+          </div>
+          <!-- ./col -->
+          <div class="col-lg-4 col-6">
+            <!-- small box -->
+            <div class="small-box bg-warning">
+              <div class="inner">
+                <h3><asp:Label ID="lblMList" runat="server" Text="X"></asp:Label></h3>
+                <p>Society Members</p>
+              </div>
+              <div class="icon">
+                <i class="ion ion-ios-people"></i>
+              </div>
+              <asp:HyperLink class="small-box-footer" runat="server" NavigateUrl="~/Member_Society_MemberList.aspx">More info<i class="fas fa-arrow-circle-right"></i></asp:HyperLink>
+            </div>
+          </div>
+        </div>
+               </div>
       </section>
     </div>
             

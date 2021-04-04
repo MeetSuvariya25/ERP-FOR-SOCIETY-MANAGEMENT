@@ -118,6 +118,31 @@
                         </p>
                       </a>
                     </li>
+                    <li class="nav-item has-treeview">
+                      <a href="#" class="nav-link">
+                        <i class="nav-icon fas fa-university"></i>
+                          <p>Society Account
+                          <i class="fas fa-angle-left right"></i>
+                        </p>
+                      </a>
+                       <ul class="nav nav-treeview">
+                        <li class="nav-item">
+                          <a href="Member_SAccount_Info.aspx" class="nav-link">
+                            <i class="far fa-circle nav-icon"></i>
+                            <p>Society Account</p>
+                          </a>
+                        </li>
+                      </ul>
+                      <ul class="nav nav-treeview">
+                        <li class="nav-item">
+                          <a href="Member_SAccount_Maintenance.aspx" class="nav-link">
+                            <i class="far fa-circle nav-icon"></i>
+                            <p>Maintenance</p>
+                          </a>
+                        </li>
+                      </ul>
+                      
+                    </li>
                    <li class="nav-item has-treeview">
                       <a href="#" class="nav-link">
                         <i class="nav-icon fas fa-car"></i>
@@ -215,7 +240,7 @@
                     <SortedDescendingCellStyle BackColor="#E9EBEF" />
                     <SortedDescendingHeaderStyle BackColor="#4870BE" />
                    </asp:GridView>
-                   <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" ProviderName="<%$ ConnectionStrings:ConnectionString.ProviderName %>" SelectCommand="SELECT [MBlock], [MName], [MBDate], [MTotalmember], [HouseType], [MPhone], [MEmail] FROM [MemberInfo] WHERE ([SocietyCode] = @SocietyCode)">
+                   <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" ProviderName="<%$ ConnectionStrings:ConnectionString.ProviderName %>" SelectCommand="SELECT [MBlock], [MName], [MBDate], [MTotalmember], [HouseType], [MPhone], [MEmail] FROM [MemberInfo] WHERE ([SocietyCode] = @SocietyCode) ORDER BY [MBlock]">
                        <SelectParameters>
                            <asp:SessionParameter Name="SocietyCode" SessionField="MSCode" Type="String" />
                        </SelectParameters>
@@ -233,7 +258,7 @@
               <div class="float-right d-none d-sm-inline-block">
                 <b><a href="">Meet Suvariya</a></b> 
               </div>
-            </footer>
+                  s</footer>
             <!-- footer -->
 
 

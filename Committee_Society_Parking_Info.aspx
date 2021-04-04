@@ -6,7 +6,7 @@
 <head runat="server">
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>Committee| Dashboard</title>
+  <title>Committee| Parking</title>
   <!-- Tell the browser to be responsive to screen width -->
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <!-- Font Awesome -->
@@ -120,6 +120,46 @@
                         <i class="nav-icon fas fa-user-minus"></i>
                         <p>Remove Member</p>
                       </a>
+                    </li>
+                    <li class="nav-item has-treeview">
+                      <a href="#" class="nav-link">
+                        <i class="nav-icon fas fa-university"></i>
+                          <p>Account
+                          <i class="fas fa-angle-left right"></i>
+                        </p>
+                      </a>
+                         <ul class="nav nav-treeview">
+                        <li class="nav-item">
+                          <a href="Committee_Account_Amount.aspx" class="nav-link">
+                            <i class="far fa-circle nav-icon"></i>
+                            <p>Account Info</p>
+                          </a>
+                        </li>
+                      </ul>
+                      <ul class="nav nav-treeview">
+                        <li class="nav-item">
+                          <a href="Committee_Account_Income.aspx" class="nav-link">
+                            <i class="far fa-circle nav-icon"></i>
+                            <p>Income</p>
+                          </a>
+                        </li>
+                      </ul>
+                        <ul class="nav nav-treeview">
+                        <li class="nav-item">
+                          <a href="Committee_Account_Expenses.aspx" class="nav-link">
+                            <i class="far fa-circle nav-icon"></i>
+                            <p>Expenses</p>
+                          </a>
+                        </li>
+                      </ul>
+                       <ul class="nav nav-treeview">
+                        <li class="nav-item">
+                          <a href="Committee_Account_Maintenance.aspx" class="nav-link">
+                            <i class="far fa-circle nav-icon"></i>
+                            <p>Maintenance</p>
+                          </a>
+                        </li>
+                      </ul>
                     </li>
                    <li class="nav-item has-treeview">
                       <a href="#" class="nav-link">

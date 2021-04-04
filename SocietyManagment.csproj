@@ -45,6 +45,14 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="AjaxControlToolkit, Version=19.1.0.0, Culture=neutral, PublicKeyToken=28f01b0e84b6d53e, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Users\HP\Documents\ASP.NET AJAX Control Toolkit\Bin\AjaxControlToolkit.dll</HintPath>
+    </Reference>
+    <Reference Include="itextsharp, Version=5.5.10.0, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>D:\dll files\itextsharp.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Web.DataVisualization" />
     <Reference Include="System.Web.DynamicData" />
@@ -103,9 +111,17 @@
     <Content Include="build\npm\DocsPublish.js" />
     <Content Include="build\npm\Plugins.js" />
     <Content Include="build\npm\Publish.js" />
+    <Content Include="Committee_Account_Amount.aspx" />
+    <Content Include="Committee_Account_Expenses.aspx" />
+    <Content Include="Committee_Account_Income.aspx" />
+    <Content Include="Committee_Account_Maintenance.aspx" />
+    <Content Include="Committee_Add_Maintenance.aspx" />
     <Content Include="Committee_Add_Member.aspx" />
     <Content Include="Committee_Edit_Profile.aspx" />
     <Content Include="Committee_Edit_SocietyInfo.aspx" />
+    <Content Include="Committee_Expenses_History.aspx" />
+    <Content Include="Committee_Income_History.aspx" />
+    <Content Include="Committee_Maintenance_Status.aspx" />
     <Content Include="Committee_Panel.aspx" />
     <Content Include="Committee_Profile.aspx" />
     <Content Include="Committee_Remove_Member.aspx" />
@@ -250,13 +266,21 @@
     <Content Include="docs\_layouts\home.html" />
     <Content Include="docs\_layouts\page.html" />
     <Content Include="docs\_layouts\post.html" />
+    <Content Include="itextsharp.dll" />
     <Content Include="login.aspx" />
+    <Content Include="Maintenance_Slip.aspx" />
     <Content Include="Member_Add_Vehicle.aspx" />
     <Content Include="Member_CommitteeList.aspx" />
     <Content Include="Member_Edit_Profile.aspx" />
+    <Content Include="Member_Expenses_History.aspx" />
+    <Content Include="Member_Income_History.aspx" />
+    <Content Include="Member_Maintenance_Print_Slip.aspx" />
+    <Content Include="Member_Maintenance_Status.aspx" />
     <Content Include="Member_Other_Vehicles.aspx" />
     <Content Include="Member_Panel.aspx" />
     <Content Include="Member_Profile.aspx" />
+    <Content Include="Member_SAccount_Info.aspx" />
+    <Content Include="Member_SAccount_Maintenance.aspx" />
     <Content Include="Member_Societyinfo.aspx" />
     <Content Include="Member_Society_MemberList.aspx" />
     <Content Include="Member_Update_Remove_Vehicle.aspx" />
@@ -1961,6 +1985,41 @@
     <Compile Include="Admin_UpdateSocietyInfo.aspx.designer.cs">
       <DependentUpon>Admin_UpdateSocietyInfo.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Committee_Account_Amount.aspx.cs">
+      <DependentUpon>Committee_Account_Amount.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Committee_Account_Amount.aspx.designer.cs">
+      <DependentUpon>Committee_Account_Amount.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Committee_Account_Expenses.aspx.cs">
+      <DependentUpon>Committee_Account_Expenses.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Committee_Account_Expenses.aspx.designer.cs">
+      <DependentUpon>Committee_Account_Expenses.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Committee_Account_Income.aspx.cs">
+      <DependentUpon>Committee_Account_Income.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Committee_Account_Income.aspx.designer.cs">
+      <DependentUpon>Committee_Account_Income.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Committee_Account_Maintenance.aspx.cs">
+      <DependentUpon>Committee_Account_Maintenance.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Committee_Account_Maintenance.aspx.designer.cs">
+      <DependentUpon>Committee_Account_Maintenance.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Committee_Add_Maintenance.aspx.cs">
+      <DependentUpon>Committee_Add_Maintenance.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Committee_Add_Maintenance.aspx.designer.cs">
+      <DependentUpon>Committee_Add_Maintenance.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Committee_Add_Member.aspx.cs">
       <DependentUpon>Committee_Add_Member.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -1981,6 +2040,27 @@
     </Compile>
     <Compile Include="Committee_Edit_SocietyInfo.aspx.designer.cs">
       <DependentUpon>Committee_Edit_SocietyInfo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Committee_Expenses_History.aspx.cs">
+      <DependentUpon>Committee_Expenses_History.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Committee_Expenses_History.aspx.designer.cs">
+      <DependentUpon>Committee_Expenses_History.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Committee_Income_History.aspx.cs">
+      <DependentUpon>Committee_Income_History.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Committee_Income_History.aspx.designer.cs">
+      <DependentUpon>Committee_Income_History.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Committee_Maintenance_Status.aspx.cs">
+      <DependentUpon>Committee_Maintenance_Status.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Committee_Maintenance_Status.aspx.designer.cs">
+      <DependentUpon>Committee_Maintenance_Status.aspx</DependentUpon>
     </Compile>
     <Compile Include="Committee_Panel.aspx.cs">
       <DependentUpon>Committee_Panel.aspx</DependentUpon>
@@ -2045,6 +2125,13 @@
     <Compile Include="login.aspx.designer.cs">
       <DependentUpon>login.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Maintenance_Slip.aspx.cs">
+      <DependentUpon>Maintenance_Slip.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Maintenance_Slip.aspx.designer.cs">
+      <DependentUpon>Maintenance_Slip.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Member_Add_Vehicle.aspx.cs">
       <DependentUpon>Member_Add_Vehicle.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -2066,6 +2153,34 @@
     <Compile Include="Member_Edit_Profile.aspx.designer.cs">
       <DependentUpon>Member_Edit_Profile.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Member_Expenses_History.aspx.cs">
+      <DependentUpon>Member_Expenses_History.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Member_Expenses_History.aspx.designer.cs">
+      <DependentUpon>Member_Expenses_History.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Member_Income_History.aspx.cs">
+      <DependentUpon>Member_Income_History.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Member_Income_History.aspx.designer.cs">
+      <DependentUpon>Member_Income_History.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Member_Maintenance_Print_Slip.aspx.cs">
+      <DependentUpon>Member_Maintenance_Print_Slip.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Member_Maintenance_Print_Slip.aspx.designer.cs">
+      <DependentUpon>Member_Maintenance_Print_Slip.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Member_Maintenance_Status.aspx.cs">
+      <DependentUpon>Member_Maintenance_Status.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Member_Maintenance_Status.aspx.designer.cs">
+      <DependentUpon>Member_Maintenance_Status.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Member_Other_Vehicles.aspx.cs">
       <DependentUpon>Member_Other_Vehicles.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -2086,6 +2201,20 @@
     </Compile>
     <Compile Include="Member_Profile.aspx.designer.cs">
       <DependentUpon>Member_Profile.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Member_SAccount_Info.aspx.cs">
+      <DependentUpon>Member_SAccount_Info.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Member_SAccount_Info.aspx.designer.cs">
+      <DependentUpon>Member_SAccount_Info.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Member_SAccount_Maintenance.aspx.cs">
+      <DependentUpon>Member_SAccount_Maintenance.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Member_SAccount_Maintenance.aspx.designer.cs">
+      <DependentUpon>Member_SAccount_Maintenance.aspx</DependentUpon>
     </Compile>
     <Compile Include="Member_Societyinfo.aspx.cs">
       <DependentUpon>Member_Societyinfo.aspx</DependentUpon>

@@ -77,7 +77,24 @@ namespace SocietyManagment
           txtARCMSN.Text = dr2["SocietyName"].ToString();
         
         }
-        
+        if (IsPostBack)
+        {
+          con.Close();
+          con.Open();
+          String cs = "select CoCode from CommitteeInfo where SocietyCode=@pc";
+          SqlCommand ccmd = new SqlCommand(cs, con);
+          ccmd.Parameters.AddWithValue("@pc", dlASCode.SelectedValue.ToString());
+          SqlDataReader cdr = ccmd.ExecuteReader();
+          
+          dlARCMCode.DataSource = cdr;
+          dlARCMCode.DataTextField = "CoCode";
+          dlARCMCode.DataValueField = "CoCode";
+          dlARCMCode.DataBind();
+          dlARCMCode.Items.Insert(0, "Select Committee Code");
+          con.Close();
+          
+        }
+
         con.Close();
       }
       else

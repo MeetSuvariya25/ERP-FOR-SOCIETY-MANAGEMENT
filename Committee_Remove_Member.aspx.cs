@@ -87,6 +87,14 @@ namespace SocietyManagment
           cmd3.Parameters.AddWithValue("@p4", dlCRMMName.SelectedItem.Value.ToString());
           cmd3.Parameters.AddWithValue("@p5", txtCRMMUsername.Text);
           cmd3.ExecuteNonQuery();
+
+          // delete Vehicle
+          string sv = "delete from VehicleDetails where SocietyCode=@psv and MName=@puv";
+          SqlCommand cmdv = new SqlCommand(sv, con);
+          cmdv.Parameters.AddWithValue("@psv", Session["CSCode"].ToString());
+          cmdv.Parameters.AddWithValue("@puv", txtCRMMUsername.Text);
+          cmdv.ExecuteNonQuery();
+
           lblCRMflag.Text = "Deleted".ToString();
           dlCRMMName.SelectedIndex = 0;
           txtCRMPassword.Text = "";

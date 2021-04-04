@@ -73,6 +73,7 @@ namespace SocietyManagment
           cmd1.Parameters.AddWithValue("@p7", dlAASState.SelectedValue.ToString());
           cmd1.ExecuteNonQuery();
           con.Close();
+          updateSocietyAccount(txtASCode.Text, txtASName.Text);
           updateCityWiseSociety(dlAASCity.SelectedValue.ToString());
           txtASCode.Text = "";
           txtASName.Text = "";
@@ -153,6 +154,17 @@ namespace SocietyManagment
 
         }
       }
+    }
+    protected void updateSocietyAccount(string sc,string sn)
+    {
+      con.Open();
+      string susa = "insert into SocietyAccount (SocietyCode,SocietyName,TotalAmount) values (@psc,@psn,@pta)";
+      SqlCommand usacmd = new SqlCommand(susa, con);
+      usacmd.Parameters.AddWithValue("@psc",sc);
+      usacmd.Parameters.AddWithValue("@psn",sn);
+      usacmd.Parameters.AddWithValue("@pta", 0);
+      usacmd.ExecuteNonQuery();
+      con.Close();
     }
   }
 }
