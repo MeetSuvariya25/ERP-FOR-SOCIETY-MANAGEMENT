@@ -31,4 +31,4 @@ The Main Objective of this project is to make things useful and easy to use for 
 ---------
 For a detailed description, you can read my blog from the following link.
 
-https://meetsuvariya.medium.com/erp-system-for-society-management-using-asp-net-framework-c-51e4a2d87689
+https://medium.com/@meetsuvariya/erp-system-for-society-management-using-asp-net-framework-c-43e23dcede8b
